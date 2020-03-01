@@ -1,0 +1,4 @@
+tzunghaor:
+  form-flow:
+    forward-submit: "Next"
+    back-submit: "Back"

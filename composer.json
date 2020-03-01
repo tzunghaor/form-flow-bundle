@@ -1,0 +1,29 @@
+{
+    "name": "tzunghaor/form-flow-bundle",
+    "description": "Form flow for symfony",
+    "type": "symfony-bundle",
+    "require": {
+        "php": "~7.1",
+        "symfony/event-dispatcher": "~3.4",
+        "symfony/form": "~3.4",
+        "symfony/validator": "~3.4",
+        "symfony/dependency-injection": "~3.4"
+    },
+    "suggest": {
+        "doctrine/orm": "^2.5",
+        "symfony/framework-bundle": "~3.4",
+        "twig/twig": "^1.0||^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tzunghaor\\FormFlowBundle\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andras Prim",
+            "email": "tzunghaor+github@gmail.com"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form _self %}
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        <ul class="errors">
+            {%- for error in errors -%}
+                <li>{{ error.message }}</li>
+            {%- endfor -%}
+        </ul>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block form_row -%}
+    <div class="form-row{% if errors|length > 0 %} has-error{% endif %}">
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock form_row -%}
+
+{% block title %}{{ flow.currentStep.label | trans }}{% endblock %}
+
+{% block body %}
+    {% block navigation %}
+        {{ include('@TzunghaorFormFlow/steps_nav.html.twig') }}
+    {% endblock %}
+
+    {% block form %}
+        {{ include('@TzunghaorFormFlow/form.html.twig') }}
+    {% endblock %}
+{% endblock %}
+

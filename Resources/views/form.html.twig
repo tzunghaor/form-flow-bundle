@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+
+{% for paramName, paramValue in flow.routeParameters %}
+    <input type="hidden" name="{{ paramName }}" value="{{ paramValue }}">
+{% endfor %}
+
+<div class="th-flow-buttons">
+{{ form_widget(flow.backSubmitButton) }}
+{{ form_widget(flow.forwardSubmitButton) }}
+</div>
+
+{{ form_end(form) }}

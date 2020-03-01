@@ -1,0 +1,20 @@
+<ul class="th-flow-nav">
+    {% for step in flow.steps %}
+        {% set classes = [] %}
+        {% if step.accessible %}
+            {% set classes = classes|merge(['accessible']) %}
+        {% endif %}
+        {% if step.skipped %}
+            {% set classes = classes|merge(['skipped']) %}
+        {% endif %}
+        {% if step.name == flow.currentStepName %}
+            {% set classes = classes|merge(['current']) %}
+        {% endif %}
+
+        <li class="{{ classes|join(' ') }}">
+            <a href="{{ path('tzunghaor_formflow_index', flow.routeParameters(step.name)) }}">
+                {{ step.label | trans }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

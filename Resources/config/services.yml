@@ -1,0 +1,11 @@
+services:
+    tzunghaor_form_flow.utils.session_storage:
+        class: Tzunghaor\FormFlowBundle\Storage\SessionStorage
+        arguments: ['@session']
+
+    tzunghaor_form_flow.utils.doctrine_storage:
+        class: Tzunghaor\FormFlowBundle\Storage\DoctrineStorage
+        arguments: ['@doctrine.orm.entity_manager']
+
+    tzunghaor_form_flow.form_flow_locator:
+        class: Tzunghaor\FormFlowBundle\FormFlow\FormFlowLocator
